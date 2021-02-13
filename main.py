@@ -1,6 +1,7 @@
 from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
 
+
 class Voxel(Button):
     def __init__(self, position=(0, 0, 0)):
         super().__init__(
@@ -13,6 +14,10 @@ class Voxel(Button):
             highlight_color=color.lime
         )
 
+    def input(self, key):
+        if self.hovered:
+            if key == 'left mouse down':
+                voxel = Voxel(position=self.position + mouse.normal)
 
 app = Ursina()
 
