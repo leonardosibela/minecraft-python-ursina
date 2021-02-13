@@ -19,6 +19,9 @@ class Voxel(Button):
             if key == 'left mouse down':
                 voxel = Voxel(position=self.position + mouse.normal)
 
+            if key == 'right mouse down':
+                destroy(self)
+
 app = Ursina()
 
 for z in range(20):
