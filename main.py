@@ -7,10 +7,15 @@ grass_texture = load_texture('assets/grass_block.png')
 stone_texture = load_texture('assets/stone_block.png')
 brick_texture = load_texture('assets/brick_block.png')
 dirt_texture = load_texture('assets/dirt_block.png')
+block_picked = grass_texture
+
 sky_texture = load_texture('assets/skybox.png')
 arm_texture = load_texture('assets/arm_texture.png')
+
 punch_sound = Audio('assets/punch_sound', loop=False, autoplay=False)
-block_picked = grass_texture
+
+window.fps_counter.enabled = False
+window.exit_button.enabled = False
 
 
 def update():
