@@ -9,6 +9,7 @@ brick_texture = load_texture('assets/brick_block.png')
 dirt_texture = load_texture('assets/dirt_block.png')
 sky_texture = load_texture('assets/skybox.png')
 arm_texture = load_texture('assets/arm_texture.png')
+punch_sound = Audio('assets/punch_sound', loop=False, autoplay=False)
 block_picked = grass_texture
 
 
@@ -48,9 +49,11 @@ class Voxel(Button):
     def input(self, key):
         if self.hovered:
             if key == 'left mouse down':
+                punch_sound.play()
                 Voxel(position=self.position + mouse.normal, texture=block_picked)
 
             if key == 'right mouse down':
+                punch_sound.play()
                 destroy(self)
 
 
